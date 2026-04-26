@@ -1,2 +1,2 @@
-# burninggames2140
-a repo of games when bored at school
+# burningg-mes2140
+a repo of g-mes when bored at school
