@@ -265,17 +265,34 @@ async function fetchHistory() {
     }
 }
 
-function stealthLaunch() {
-    let win = window.open('about:blank', '_blank');
-    if (!win) return alert('Allow popups!');
-    let html = `<html><head><title>My Drive - Google Drive</title><link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"><style>body,html{margin:0;padding:0;height:100%;overflow:hidden;}iframe{border:none;width:100%;height:100%;}</style></head><body><iframe src="${window.location.href}"></iframe></body></html>`;
-    win.document.write(html);
-    win.document.close();
+
+function openGame(url) {
+    // 1. We skip 'about:blank' and open the URL directly in a new tab
+    let win = window.open(url, '_blank');
+   
+    if (!win) {
+        alert('POPUP BLOCKED! Look at the end of your address bar to allow them.');
+        return;
+    }
+
+    // 2. We wait a tiny split-second for the tab to initialize, 
+    // then we inject the Stealth Title and Icon.
+    // This works on most Chromium browsers (Chrome, Edge, Opera).
+    setTimeout(() => {
+        try {
+            win.document.title = "Google Docs";
+            let link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon-2020q4.ico';
+            win.document.head.appendChild(link);
+        } catch (e) {
+            // If the game site is super strict, it might block the title change,
+            // but the game will still load instead of giving a 404!
+            console.log("Stealth 'Skin' blocked, but game loading...");
+        }
+    }, 500);
 }
 
-setInterval(updateClock, 1000);
-updateClock();
-fetchHistory();
 </script>
 </body>
 </html>
