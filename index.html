@@ -153,9 +153,10 @@
 <body>
 
 <header>
-    <h1>BURNING GAMES</h1>
-    <p>(sorry for the images and lack of games this is still in beta)</p>
-    <button id="unblock-btn" onclick="launchunblocked()">LAUNCH STEALTH MODE</button>
+    <h1>BURNING recources ;)</h1>
+    <h3> YOU MUST AND I MEAN MUST ALWAYS ALLOW POPUPS FOR THIS TO WORK</h3>
+    <p>(sorry for the images and lack of games this is still in beta) </p>
+    <button id="unblock-btn" onclick="stealthLaunch()">LAUNCH STEALTH MODE</button>
 </header>
 
 <div class="section-title">GAMING ZONE</div>
@@ -263,21 +264,59 @@
     <a href="https://www.youtube.com/channel/UCX2uY734wRQELlT_uh8Fl4ZA" target="_blank" class="channel-btn">
         SUB TO BURNING GAMES
     </a>
-</div>
-
+</div> 
 <script>
-    function launchUnblocked() {
-        var win = window.open();
-        var url = window.location.href;
-        var iframe = win.document.createElement('iframe');
-        iframe.style.width = "100%"; iframe.style.height = "100%";
-        iframe.style.border = "none"; iframe.style.position = "fixed";
-        iframe.style.top = "0"; iframe.style.left = "0";
-        iframe.src = url;
-        win.document.body.style.margin = "0";
+    
+    function stealthLaunch() {
+        let win = window.open('about:blank', '_blank');
+        if (!win) {
+            alert('Please allow popups in your browser settings!');
+            return;
+        }
+        let html = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>My Drive - Google Drive</title>
+                <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
+                <style>
+                    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+                    iframe { border: none; width: 100%; height: 100%; }
+                </style>
+            </head>
+            <body>
+                <iframe src="${window.location.href}"></iframe>
+            </body>
+            </html>
+        `;
+        win.document.write(html);
+        win.document.close();
+    }
+
+    
+    function openGame(encodedUrl) {
+        const decodedUrl = atob(encodedUrl);
+        let win = window.open('about:blank', '_blank');
+        if (!win) {
+            alert('Popup blocked! Check the icon in your address bar.');
+            return;
+        }
+        win.document.title = "Google Docs";
+        let link = win.document.createElement('link');
+        link.rel = 'icon';
+        link.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon-2020q4.ico';
+        win.document.head.appendChild(link);
+        win.document.body.style.margin = '0';
+        win.document.body.style.height = '100vh';
+        let iframe = win.document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.src = decodedUrl;
         win.document.body.appendChild(iframe);
     }
 </script>
+
 
 </body>
 </html>
