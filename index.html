@@ -155,90 +155,103 @@
 <header>
     <h1>BURNING GAMES</h1>
     <p>(sorry for the images and lack of games this is still in beta)</p>
-    <button id="unblock-btn" onclick="launchUnblocked()">LAUNCH STEALTH MODE</button>
+    <button id="unblock-btn" onclick="stealthlaunch()">LAUNCH STEALTH MODE</button>
 </header>
 
 <div class="section-title">GAMING ZONE</div>
+
 <div class="game-grid">
-    <a href="https://poki.com/en/g/level-devil" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wb2tpLmNvbS9lbi9nL2xldmVsLWRldmls')">
         <img src="https://assets.poki.com/img/games/level-devil-icon.png" alt="Level Devil">
         <span>Level Devil</span>
-    </a>
-    <a href="https://poki.com/en/g/we-become-what-we-behold" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wb2tpLmNvbS9lbi9nL3dlLWJlY29tZS13aGF0LXdlLWJlaG9sZA==')">
         <img src="https://img.poki.com/cdn-cgi/image/f=auto/b00ad8c72f53412a8a5f824e414c1737.png" alt="WBWWB">
         <span>WBWWB</span>
-    </a>
-    <a href="https://poki.com/en/g/forgotten-hill-surgery" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wb2tpLmNvbS9lbi9nL2ZvcmdvdHRlbi1oaWxsLXN1cmdlcnk=')">
         <img src="https://assets.poki.com/img/games/forgotten-hill-surgery-icon.png" alt="Forgotten Hill">
         <span>Forgotten Hill</span>
-    </a>
-    <a href="https://poki.com/en/g/short-life" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wb2tpLmNvbS9lbi9nL3Nob3J0LWxpZmU=')">
         <img src="https://assets.poki.com/img/games/short-life-icon.png" alt="Short Life">
         <span>Short Life</span>
-    </a>
-    <a href="https://poki.com/en/g/ragdoll-hit" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wb2tpLmNvbS9lbi9nL3JhZ2RvbGwtaGl0')">
         <img src="https://assets.poki.com/img/games/ragdoll-hit-icon.png" alt="Ragdoll Hit">
         <span>Ragdoll Hit</span>
-    </a>
+    </div>
 
-    <a href="https://www.crazygames.com/game/stickman-annihilation-2" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly93d3cuY3JhenlnYW1lcy5jb20vZ2FtZS9zdGlja21hbi1hbm5paGlsYXRpb24tMg==')">
         <img src="https://images.crazygames.com/stickman-annihilation-2/20210211100226/stickman-annihilation-2-cover.png" alt="Stickman">
         <span>Stickman Annihilation 2</span>
-    </a>
-    <a href="https://www.crazygames.com/game/turbo-dismounting" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly93d3cuY3JhenlnYW1lcy5jb20vZ2FtZS90dXJiby1kaXNtb3VudGluZw==')">
         <img src="https://images.crazygames.com/games/turbo-dismounting/cover-1583401543661.png" alt="Turbo">
         <span>Turbo Dismounting</span>
-    </a>
-    <a href="https://www.crazygames.com/game/stick-crush" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly93d3cuY3JhenlnYW1lcy5jb20vZ2FtZS9zdGljay1jcnVzaA==')">
         <img src="https://images.crazygames.com/stick-crush/20210125155909/stick-crush-cover.png" alt="Stick Crush">
         <span>Stick Crush</span>
-    </a>
+    </div>
 
-    <a href="https://sites.google.com/view/glasgowstudents/games/gladihoppers" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvZ2xhc2dvd3N0dWRlbnRzL2dhbWVzL2dsYWRpaG9wcGVycw==')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Hopper_icon.svg/512px-Hopper_icon.svg.png" alt="Gladihoppers">
         <span>Gladihoppers</span>
-    </a>
-    <a href="https://sites.google.com/view/glasgowstudents/games/minecraft-1-8" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvZ2xhc2dvd3N0dWRlbnRzL2dhbWVzL21pbmVjcmFmdC0xLTgg')">
         <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft">
         <span>Minecraft 1.8</span>
-    </a>
-    <a href="https://sites.google.com/view/glasgowstudents/games/5-nights-at-freddys" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvZ2xhc2dvd3N0dWRlbnRzL2dhbWVzLzUtbmlnaHRzLWF0LWZyZWRkeXM=')">
         <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Five_Nights_at_Freddy%27s_1_cover.png" alt="FNAF">
         <span>FNAF</span>
-    </a>
-    <a href="https://sites.google.com/view/warp-speed" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL3ZpZXcvd2FycC1zcGVlZA==')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Warp_Speed_game.jpg/320px-Warp_Speed_game.jpg" alt="Warp Speed">
         <span>Warp Speed</span>
-    </a>
+    </div>
 
-    <a href="https://www.addictinggames.com/strategy/free-rider-2" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly93d3cuYWRkaWN0aW5nZ2FtZXMuY29tL3N0cmF0ZWd5L2ZyZWUtcmlkZXItMg==')">
         <img src="https://www.addictinggames.com/sites/default/files/free-rider-2.png" alt="Free Rider">
         <span>Free Rider 2</span>
-    </a>
-    
-    <a href="https://slither.io/" target="_blank" class="game-card">
+    </div>
+
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9zbGl0aGVyLmlvLw==')">
         <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/Slither.io_game_logo.png" alt="Slither IO">
         <span>Biology Simulation 1.1</span>
-    </a>
+    </div>
 
-    <a href="https://escaperoad.io/game/escape-road" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9lc2NhcGVyb2FkLmlvL2dhbWUvZXNjYXBlLXJvYWQ=')">
         <img src="https://pbs.twimg.com/media/DEfYkfTUQAAv_mP.jpg" alt="Escape Road">
         <span>Velocity Research Project</span>
-    </a>
+    </div>
 
-    <a href="https://play2048.co/" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9wbGF5MjA0OC5jby8=')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png" alt="2048">
         <span>Advanced Addition Module</span>
-    </a>
+    </div>
 
-    <a href="https://doodlejump.io/game/doodle-jump" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9kb29kbGVqdW1wLmlvL2dhbWUvZG9vZGxlLWp1bXA=')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Doodle_Jump_icon.svg/512px-Doodle_Jump_icon.svg.png" alt="Doodle Jump">
         <span>Physics: Vertical Velocity</span>
-    </a>
+    </div>
 
-    <a href="https://chromedino.com/" target="_blank" class="game-card">
+    <div class="game-card" style="cursor: pointer;" onclick="openGame('aHR0cHM6Ly9jaHJvbWVkaW5vLmNvbS8=')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Chromedino.jpg/512px-Chromedino.jpg" alt="Dino">
         <span>History of Archaeology</span>
+    </div>
+</div>
+
     </a>
 </div>
 
