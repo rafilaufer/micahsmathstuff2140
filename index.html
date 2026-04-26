@@ -1,5 +1,6 @@
  
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,7 +146,7 @@
 <div class="section-title">RESOURCE ZONE</div>
 
 <div class="game-grid">
-    <a href="#" class="game-card" onclick="openGame('https://static.games68.com/2024/01/level-devil/'); return false;">
+    <a href="#" class="game-card" onclick="openGame('https://level-devil.github.io/'); return false;">
         <img src="https://assets.poki.com/img/games/level-devil-icon.png" alt="Level Devil">
         <span>Stability Research Module</span>
     </a>
@@ -153,7 +154,7 @@
         <img src="https://img.poki.com/cdn-cgi/image/f=auto/b00ad8c72f53412a8a5f824e414c1737.png" alt="WBWWB">
         <span>Societal Observation Study</span>
     </a>
-    <a href="#" class="game-card" onclick="openGame('https://games68.com/forgotten-hill-surgery.html'); return false;">
+    <a href="#" class="game-card" onclick="openGame('https://forgotten-hill.github.io/'); return false;">
         <img src="https://assets.poki.com/img/games/forgotten-hill-surgery-icon.png" alt="Forgotten Hill">
         <span>Medical History Archive</span>
     </a>
@@ -165,7 +166,7 @@
         <img src="https://assets.poki.com/img/games/ragdoll-hit-icon.png" alt="Ragdoll Hit">
         <span>Kinetic Physics Lab</span>
     </a>
-    <a href="#" class="game-card" onclick="openGame('https://games68.com/stickman-annihilation-2.html'); return false;">
+    <a href="#" class="game-card" onclick="openGame('https://stickman-annihilation.github.io/'); return false;">
         <img src="https://images.crazygames.com/stickman-annihilation-2/20210211100226/stickman-annihilation-2-cover.png" alt="Stickman">
         <span>Structural Integrity Analysis</span>
     </a>
@@ -173,7 +174,7 @@
         <img src="https://images.crazygames.com/games/turbo-dismounting/cover-1583401543661.png" alt="Turbo">
         <span>Velocity Impact Module</span>
     </a>
-    <a href="#" class="game-card" onclick="openGame('https://games68.com/stick-crush.html'); return false;">
+    <a href="#" class="game-card" onclick="openGame('https://stick-crush.github.io/'); return false;">
         <img src="https://images.crazygames.com/stick-crush/20210125155909/stick-crush-cover.png" alt="Stick Crush">
         <span>Compression Strength Test</span>
     </a>
@@ -213,8 +214,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Doodle_Jump_icon.svg/512px-Doodle_Jump_icon.svg.png" alt="Doodle Jump">
         <span>Atmospheric Ascent Study</span>
     </a>
-    <a href="#" class="game-card" onclick="openGame
-('https://chrome-dino.github.io/'); return false;">
+    <a href="#" class="game-card" onclick="openGame('https://chrome-dino.github.io/'); return false;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Chromedino.jpg/512px-Chromedino.jpg" alt="Dino">
         <span>Paleontology Overview</span>
     </a>
@@ -227,41 +227,21 @@
     </div>
 </div>
 
-
 <script>
-// 1. THE STEALTH ENGINE (Using the "Blob" Method)
 function openGame(url) {
-    // We create a tiny "fake" page in memory
-    const pageContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Google Docs</title>
-            <link rel="icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon-2020q4.ico">
-            <style>
-                body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; }
-                iframe { border: none; width: 100%; height: 100%; }
-            </style>
-        </head>
-        <body>
-            <iframe src="${url}"></iframe>
-        </body>
-        </html>
-    `;
-
-    // Turn that content into a URL the browser can understand
-    const blob = new Blob([pageContent], { type: 'text/html' });
-    const blobUrl = URL.createObjectURL(blob);
-
-    // Open it!
-    const win = window.open(blobUrl, '_blank');
-    
+    let win = window.open('about:blank', '_blank');
     if (!win) {
-        alert('POPUP BLOCKED! Please allow popups at the top right.');
+        alert('POPUP BLOCKED!');
+        return;
     }
+    win.document.title = "Google Docs";
+    let link = win.document.createElement('link');
+    link.rel = 'icon';
+    link.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon-2020q4.ico';
+    win.document.head.appendChild(link);
+    win.location.href = url;
 }
 
-// 2. CLOCK & HISTORY (Kept the same)
 function updateClock() {
     const tz = document.getElementById('timezone-selector').value;
     const now = new Date();
@@ -297,8 +277,5 @@ setInterval(updateClock, 1000);
 updateClock();
 fetchHistory();
 </script>
-
-
-
-
-
+</body>
+</html>
