@@ -153,14 +153,14 @@
     // Game Database
     const games = [
         { name: "Stability Module", url: "https://level-devil.github.io/", img: "https://assets.poki.com/img/games/level-devil-icon.png" },
-        { name: "Societal Study", url: "https://sites.google.com/view/glasgowstudents/games/we-become-what-we-behold", img: "https://img.poki.com/cdn-cgi/image/f=auto/b00ad8c72f53412a8a5f824e414c1737.png" },
+        { name: "Societal Study", url: "https://sites.google.com/view/glasgowstudents/games/we-become-what-we-behold", img: "https://img.poki.com/cdn-cgi/image/f=auto/b00ad8c72f53412a8a5f824e414c[...]" },
         { name: "Medical History", url: "https://forgotten-hill.github.io/", img: "https://assets.poki.com/img/games/forgotten-hill-surgery-icon.png" },
         { name: "Bio-Durability", url: "https://short-life.github.io/", img: "https://assets.poki.com/img/games/short-life-icon.png" },
         { name: "Physics Lab", url: "https://ragdollhit.github.io/", img: "https://assets.poki.com/img/games/ragdoll-hit-icon.png" },
-        { name: "Structural Analysis", url: "https://stickman-annihilation.github.io/", img: "https://images.crazygames.com/stickman-annihilation-2/20210211100226/stickman-annihilation-2-cover.png" },
+        { name: "Structural Analysis", url: "https://stickman-annihilation.github.io/", img: "https://images.crazygames.com/stickman-annihilation-2/20210211100226/stickman-annihilation-2-cover.pn[...]" },
         { name: "Impact Dynamics", url: "https://turbodismounting.github.io/", img: "https://images.crazygames.com/games/turbo-dismounting/cover-1583401543661.png" },
         { name: "Drafting Tool", url: "https://sites.google.com/view/glasgowstudents/games/minecraft-1-8", img: "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" },
-        { name: "Logic Study", url: "https://sites.google.com/view/glasgowstudents/games/5-nights-at-freddys", img: "https://upload.wikimedia.org/wikipedia/en/f/f3/Five_Nights_at_Freddy%27s_1_cover.png" },
+        { name: "Logic Study", url: "https://sites.google.com/view/glasgowstudents/games/5-nights-at-freddys", img: "https://upload.wikimedia.org/wikipedia/en/f/f3/Five_Nights_at_Freddy%27s_1_cov[...]" },
         { name: "Growth Model", url: "https://slither-io.github.io/", img: "https://upload.wikimedia.org/wikipedia/en/1/1f/Slither.io_game_logo.png" },
         { name: "Math Module", url: "https://gabrielcirulli.github.io/2048/", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png" },
         { name: "Paleontology", url: "https://chrome-dino.github.io/", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Chromedino.jpg/512px-Chromedino.jpg" }
@@ -199,9 +199,10 @@
         iframe.style.border = 'none';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
-        iframe.src = url;
         
+        // Append BEFORE setting src
         doc.body.appendChild(iframe);
+        iframe.src = url;
     }
 
     // Update Clock
