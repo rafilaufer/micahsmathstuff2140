@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archival Research Hub</title>
+    <title>Research Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,7 +12,6 @@
             --card-bg: rgba(40, 40, 40, 0.95);
             --text-color: #f1c40f;
             --accent: #e74c3c;
-            --hover-flame: #ff5722;
             --retro-font: 'Press Start 2P', cursive;
         }
 
@@ -37,55 +36,6 @@
 
         header { text-align: center; padding: 20px 0; }
         h1 { font-size: 1.5rem; text-shadow: 3px 3px 0px var(--accent); }
-       
-        .section-title {
-            text-align: center;
-            font-size: 0.7rem;
-            margin: 30px 0 15px;
-            color: #fff;
-            text-transform: uppercase;
-            border-bottom: 2px dashed var(--accent);
-            display: block;
-        }
-
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 15px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .game-card {
-            background: var(--card-bg);
-            border: 3px solid #333;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            background: var(--hover-flame);
-            border-color: #fff;
-        }
-
-        .game-card img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            object-fit: cover;
-            background-color: #000;
-        }
-
-        .game-card span { font-size: 0.5rem; text-align: center; line-height: 1.4; pointer-events: none; }
 
         .dashboard-container {
             max-width: 800px;
@@ -102,34 +52,19 @@
         #clock-time { font-size: 1.5rem; color: #fff; margin-bottom: 5px; }
         #clock-date { font-size: 0.6rem; color: var(--text-color); }
         #history-fact { font-size: 0.5rem; color: #ccc; line-height: 1.6; margin-top: 10px; }
-
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 4px solid #333; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        #panic-btn {
-            background: #c0392b;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-family: var(--retro-font);
-            font-size: 0.5rem;
-            cursor: pointer;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ARCHIVAL HUB v2.0</h1>
-    <p style="font-size: 0.5rem;">SECURE RESEARCH PORTAL</p>
+    <h1>RESEARCH HUB</h1>
+    <p style="font-size: 0.5rem;">INFORMATION PORTAL</p>
 </header>
 
 <div class="dashboard-container">
     <div class="dash-box" style="border-right: 1px solid #333;">
         <div id="clock-time">00:00:00</div>
         <div id="clock-date">Loading...</div>
-        <button id="panic-btn" onclick="location.href='https://google.com'">PANIC KEY (ESC)</button>
     </div>
     <div class="dash-box">
         <div style="font-size: 0.5rem; color: var(--accent);">ON THIS DAY:</div>
@@ -137,74 +72,7 @@
     </div>
 </div>
 
-<div class="section-title">Verified Data Nodes</div>
-
-<div class="game-grid" id="node-grid">
-    </div>
-
-<div class="section-title">Visual Archives</div>
-<div style="max-width: 800px; margin: 0 auto;">
-    <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe>
-    </div>
-</div>
-
 <script>
-    // Game Database
-    const games = [
-        { name: "Stability Module", url: "https://level-devil.github.io/", img: "https://assets.poki.com/img/games/level-devil-icon.png" },
-        { name: "Societal Study", url: "https://sites.google.com/view/glasgowstudents/games/we-become-what-we-behold", img: "https://img.poki.com/cdn-cgi/image/f=auto/b00ad8c72f53412a8a5f824e414c[...]" },
-        { name: "Medical History", url: "https://forgotten-hill.github.io/", img: "https://assets.poki.com/img/games/forgotten-hill-surgery-icon.png" },
-        { name: "Bio-Durability", url: "https://short-life.github.io/", img: "https://assets.poki.com/img/games/short-life-icon.png" },
-        { name: "Physics Lab", url: "https://ragdollhit.github.io/", img: "https://assets.poki.com/img/games/ragdoll-hit-icon.png" },
-        { name: "Structural Analysis", url: "https://stickman-annihilation.github.io/", img: "https://images.crazygames.com/stickman-annihilation-2/20210211100226/stickman-annihilation-2-cover.pn[...]" },
-        { name: "Impact Dynamics", url: "https://turbodismounting.github.io/", img: "https://images.crazygames.com/games/turbo-dismounting/cover-1583401543661.png" },
-        { name: "Drafting Tool", url: "https://sites.google.com/view/glasgowstudents/games/minecraft-1-8", img: "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" },
-        { name: "Logic Study", url: "https://sites.google.com/view/glasgowstudents/games/5-nights-at-freddys", img: "https://upload.wikimedia.org/wikipedia/en/f/f3/Five_Nights_at_Freddy%27s_1_cov[...]" },
-        { name: "Growth Model", url: "https://slither-io.github.io/", img: "https://upload.wikimedia.org/wikipedia/en/1/1f/Slither.io_game_logo.png" },
-        { name: "Math Module", url: "https://gabrielcirulli.github.io/2048/", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png" },
-        { name: "Paleontology", url: "https://chrome-dino.github.io/", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Chromedino.jpg/512px-Chromedino.jpg" }
-    ];
-
-    // Populate Grid
-    const grid = document.getElementById('node-grid');
-    games.forEach(game => {
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        card.onclick = () => launchStealth(game.url);
-        card.innerHTML = `<img src="${game.img}"><span>${game.name}</span>`;
-        grid.appendChild(card);
-    });
-
-    // Stealth Launcher (The Iframe Trick)
-    function launchStealth(url) {
-        const win = window.open('about:blank', '_blank');
-        if (!win) return alert("Popup blocked! Enable popups to launch.");
-
-        const doc = win.document;
-        doc.title = "Google Docs";
-        
-        // Set Favicon
-        const link = doc.createElement('link');
-        link.rel = 'icon';
-        link.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon-2020q4.ico';
-        doc.head.appendChild(link);
-
-        // Styling for Fullscreen Iframe
-        doc.body.style.margin = '0';
-        doc.body.style.height = '100vh';
-        doc.body.style.overflow = 'hidden';
-
-        const iframe = doc.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        
-        // Append BEFORE setting src
-        doc.body.appendChild(iframe);
-        iframe.src = url;
-    }
-
     // Update Clock
     function updateClock() {
         const now = new Date();
@@ -227,11 +95,6 @@
         }
     }
     fetchHistory();
-
-    // Panic Key Shortcut (Escape)
-    window.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') location.href = 'https://google.com';
-    });
 </script>
 </body>
 </html>
